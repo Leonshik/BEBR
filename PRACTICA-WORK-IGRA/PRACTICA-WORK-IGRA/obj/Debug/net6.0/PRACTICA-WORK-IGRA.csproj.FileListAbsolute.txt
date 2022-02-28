@@ -1,0 +1,15 @@
+D:\папка для работ из VS\PRACTICA-WORK-IGRA\PRACTICA-WORK-IGRA\bin\Debug\net6.0\PRACTICA-WORK-IGRA.exe
+D:\папка для работ из VS\PRACTICA-WORK-IGRA\PRACTICA-WORK-IGRA\bin\Debug\net6.0\PRACTICA-WORK-IGRA.deps.json
+D:\папка для работ из VS\PRACTICA-WORK-IGRA\PRACTICA-WORK-IGRA\bin\Debug\net6.0\PRACTICA-WORK-IGRA.runtimeconfig.json
+D:\папка для работ из VS\PRACTICA-WORK-IGRA\PRACTICA-WORK-IGRA\bin\Debug\net6.0\PRACTICA-WORK-IGRA.dll
+D:\папка для работ из VS\PRACTICA-WORK-IGRA\PRACTICA-WORK-IGRA\bin\Debug\net6.0\ref\PRACTICA-WORK-IGRA.dll
+D:\папка для работ из VS\PRACTICA-WORK-IGRA\PRACTICA-WORK-IGRA\bin\Debug\net6.0\PRACTICA-WORK-IGRA.pdb
+D:\папка для работ из VS\PRACTICA-WORK-IGRA\PRACTICA-WORK-IGRA\obj\Debug\net6.0\PRACTICA-WORK-IGRA.csproj.AssemblyReference.cache
+D:\папка для работ из VS\PRACTICA-WORK-IGRA\PRACTICA-WORK-IGRA\obj\Debug\net6.0\PRACTICA-WORK-IGRA.GeneratedMSBuildEditorConfig.editorconfig
+D:\папка для работ из VS\PRACTICA-WORK-IGRA\PRACTICA-WORK-IGRA\obj\Debug\net6.0\PRACTICA-WORK-IGRA.AssemblyInfoInputs.cache
+D:\папка для работ из VS\PRACTICA-WORK-IGRA\PRACTICA-WORK-IGRA\obj\Debug\net6.0\PRACTICA-WORK-IGRA.AssemblyInfo.cs
+D:\папка для работ из VS\PRACTICA-WORK-IGRA\PRACTICA-WORK-IGRA\obj\Debug\net6.0\PRACTICA-WORK-IGRA.csproj.CoreCompileInputs.cache
+D:\папка для работ из VS\PRACTICA-WORK-IGRA\PRACTICA-WORK-IGRA\obj\Debug\net6.0\PRACTICA-WORK-IGRA.dll
+D:\папка для работ из VS\PRACTICA-WORK-IGRA\PRACTICA-WORK-IGRA\obj\Debug\net6.0\ref\PRACTICA-WORK-IGRA.dll
+D:\папка для работ из VS\PRACTICA-WORK-IGRA\PRACTICA-WORK-IGRA\obj\Debug\net6.0\PRACTICA-WORK-IGRA.pdb
+D:\папка для работ из VS\PRACTICA-WORK-IGRA\PRACTICA-WORK-IGRA\obj\Debug\net6.0\PRACTICA-WORK-IGRA.genruntimeconfig.cache
