@@ -1,0 +1,15 @@
+D:\папка для работ из VS\ghghg\ghghg\bin\Debug\net6.0\ghghg.exe
+D:\папка для работ из VS\ghghg\ghghg\bin\Debug\net6.0\ghghg.deps.json
+D:\папка для работ из VS\ghghg\ghghg\bin\Debug\net6.0\ghghg.runtimeconfig.json
+D:\папка для работ из VS\ghghg\ghghg\bin\Debug\net6.0\ghghg.dll
+D:\папка для работ из VS\ghghg\ghghg\bin\Debug\net6.0\ref\ghghg.dll
+D:\папка для работ из VS\ghghg\ghghg\bin\Debug\net6.0\ghghg.pdb
+D:\папка для работ из VS\ghghg\ghghg\obj\Debug\net6.0\ghghg.csproj.AssemblyReference.cache
+D:\папка для работ из VS\ghghg\ghghg\obj\Debug\net6.0\ghghg.GeneratedMSBuildEditorConfig.editorconfig
+D:\папка для работ из VS\ghghg\ghghg\obj\Debug\net6.0\ghghg.AssemblyInfoInputs.cache
+D:\папка для работ из VS\ghghg\ghghg\obj\Debug\net6.0\ghghg.AssemblyInfo.cs
+D:\папка для работ из VS\ghghg\ghghg\obj\Debug\net6.0\ghghg.csproj.CoreCompileInputs.cache
+D:\папка для работ из VS\ghghg\ghghg\obj\Debug\net6.0\ghghg.dll
+D:\папка для работ из VS\ghghg\ghghg\obj\Debug\net6.0\ref\ghghg.dll
+D:\папка для работ из VS\ghghg\ghghg\obj\Debug\net6.0\ghghg.pdb
+D:\папка для работ из VS\ghghg\ghghg\obj\Debug\net6.0\ghghg.genruntimeconfig.cache
