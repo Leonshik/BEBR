@@ -1,0 +1,15 @@
+D:\папка для работ из VS\formula i morskoy boy\formula i morskoy boy\bin\Debug\net6.0\formula i morskoy boy.exe
+D:\папка для работ из VS\formula i morskoy boy\formula i morskoy boy\bin\Debug\net6.0\formula i morskoy boy.deps.json
+D:\папка для работ из VS\formula i morskoy boy\formula i morskoy boy\bin\Debug\net6.0\formula i morskoy boy.runtimeconfig.json
+D:\папка для работ из VS\formula i morskoy boy\formula i morskoy boy\bin\Debug\net6.0\formula i morskoy boy.dll
+D:\папка для работ из VS\formula i morskoy boy\formula i morskoy boy\bin\Debug\net6.0\ref\formula i morskoy boy.dll
+D:\папка для работ из VS\formula i morskoy boy\formula i morskoy boy\bin\Debug\net6.0\formula i morskoy boy.pdb
+D:\папка для работ из VS\formula i morskoy boy\formula i morskoy boy\obj\Debug\net6.0\formula i morskoy boy.csproj.AssemblyReference.cache
+D:\папка для работ из VS\formula i morskoy boy\formula i morskoy boy\obj\Debug\net6.0\formula i morskoy boy.GeneratedMSBuildEditorConfig.editorconfig
+D:\папка для работ из VS\formula i morskoy boy\formula i morskoy boy\obj\Debug\net6.0\formula i morskoy boy.AssemblyInfoInputs.cache
+D:\папка для работ из VS\formula i morskoy boy\formula i morskoy boy\obj\Debug\net6.0\formula i morskoy boy.AssemblyInfo.cs
+D:\папка для работ из VS\formula i morskoy boy\formula i morskoy boy\obj\Debug\net6.0\formula i morskoy boy.csproj.CoreCompileInputs.cache
+D:\папка для работ из VS\formula i morskoy boy\formula i morskoy boy\obj\Debug\net6.0\formula i morskoy boy.dll
+D:\папка для работ из VS\formula i morskoy boy\formula i morskoy boy\obj\Debug\net6.0\ref\formula i morskoy boy.dll
+D:\папка для работ из VS\formula i morskoy boy\formula i morskoy boy\obj\Debug\net6.0\formula i morskoy boy.pdb
+D:\папка для работ из VS\formula i morskoy boy\formula i morskoy boy\obj\Debug\net6.0\formula i morskoy boy.genruntimeconfig.cache
