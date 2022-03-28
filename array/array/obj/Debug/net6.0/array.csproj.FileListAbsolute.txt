@@ -1,0 +1,15 @@
+D:\папка для работ из VS\array\array\bin\Debug\net6.0\array.exe
+D:\папка для работ из VS\array\array\bin\Debug\net6.0\array.deps.json
+D:\папка для работ из VS\array\array\bin\Debug\net6.0\array.runtimeconfig.json
+D:\папка для работ из VS\array\array\bin\Debug\net6.0\array.dll
+D:\папка для работ из VS\array\array\bin\Debug\net6.0\ref\array.dll
+D:\папка для работ из VS\array\array\bin\Debug\net6.0\array.pdb
+D:\папка для работ из VS\array\array\obj\Debug\net6.0\array.csproj.AssemblyReference.cache
+D:\папка для работ из VS\array\array\obj\Debug\net6.0\array.GeneratedMSBuildEditorConfig.editorconfig
+D:\папка для работ из VS\array\array\obj\Debug\net6.0\array.AssemblyInfoInputs.cache
+D:\папка для работ из VS\array\array\obj\Debug\net6.0\array.AssemblyInfo.cs
+D:\папка для работ из VS\array\array\obj\Debug\net6.0\array.csproj.CoreCompileInputs.cache
+D:\папка для работ из VS\array\array\obj\Debug\net6.0\array.dll
+D:\папка для работ из VS\array\array\obj\Debug\net6.0\ref\array.dll
+D:\папка для работ из VS\array\array\obj\Debug\net6.0\array.pdb
+D:\папка для работ из VS\array\array\obj\Debug\net6.0\array.genruntimeconfig.cache
