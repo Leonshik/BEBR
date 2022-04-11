@@ -1,0 +1,8 @@
+C:\Users\CS-1\source\repos\ConsArrGenerator\obj\Debug\ConsArrGenerator.csproj.AssemblyReference.cache
+C:\Users\CS-1\source\repos\ConsArrGenerator\obj\Debug\ConsArrGenerator.csproj.SuggestedBindingRedirects.cache
+C:\Users\CS-1\source\repos\ConsArrGenerator\obj\Debug\ConsArrGenerator.csproj.CoreCompileInputs.cache
+C:\Users\CS-1\source\repos\ConsArrGenerator\bin\Debug\ConsArrGenerator.exe.config
+C:\Users\CS-1\source\repos\ConsArrGenerator\bin\Debug\ConsArrGenerator.exe
+C:\Users\CS-1\source\repos\ConsArrGenerator\bin\Debug\ConsArrGenerator.pdb
+C:\Users\CS-1\source\repos\ConsArrGenerator\obj\Debug\ConsArrGenerator.exe
+C:\Users\CS-1\source\repos\ConsArrGenerator\obj\Debug\ConsArrGenerator.pdb
