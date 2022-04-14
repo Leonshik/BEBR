@@ -1,0 +1,15 @@
+D:\папка для работ из VS\F_WORK\F_WORK\bin\Debug\net6.0\F_WORK.exe
+D:\папка для работ из VS\F_WORK\F_WORK\bin\Debug\net6.0\F_WORK.deps.json
+D:\папка для работ из VS\F_WORK\F_WORK\bin\Debug\net6.0\F_WORK.runtimeconfig.json
+D:\папка для работ из VS\F_WORK\F_WORK\bin\Debug\net6.0\F_WORK.dll
+D:\папка для работ из VS\F_WORK\F_WORK\bin\Debug\net6.0\ref\F_WORK.dll
+D:\папка для работ из VS\F_WORK\F_WORK\bin\Debug\net6.0\F_WORK.pdb
+D:\папка для работ из VS\F_WORK\F_WORK\obj\Debug\net6.0\F_WORK.csproj.AssemblyReference.cache
+D:\папка для работ из VS\F_WORK\F_WORK\obj\Debug\net6.0\F_WORK.GeneratedMSBuildEditorConfig.editorconfig
+D:\папка для работ из VS\F_WORK\F_WORK\obj\Debug\net6.0\F_WORK.AssemblyInfoInputs.cache
+D:\папка для работ из VS\F_WORK\F_WORK\obj\Debug\net6.0\F_WORK.AssemblyInfo.cs
+D:\папка для работ из VS\F_WORK\F_WORK\obj\Debug\net6.0\F_WORK.csproj.CoreCompileInputs.cache
+D:\папка для работ из VS\F_WORK\F_WORK\obj\Debug\net6.0\F_WORK.dll
+D:\папка для работ из VS\F_WORK\F_WORK\obj\Debug\net6.0\ref\F_WORK.dll
+D:\папка для работ из VS\F_WORK\F_WORK\obj\Debug\net6.0\F_WORK.pdb
+D:\папка для работ из VS\F_WORK\F_WORK\obj\Debug\net6.0\F_WORK.genruntimeconfig.cache
