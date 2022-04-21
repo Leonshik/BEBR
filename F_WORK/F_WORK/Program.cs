@@ -5,208 +5,257 @@ namespace F_WORK
     {
         static void Main(string[] args)
         {
+            { 
             /*
-           ConsoleKeyInfo KAKA;
-           for(int ror =0; ror !=20;ror++)
-           {
-               KAKA = Console.ReadKey();
-               Console.WriteLine(KAKA.KeyChar);
-           }
-           */
-            int kx = 1, ky = 1;
-            int[,] map = new int[3, 3];
+            Char[,] testy;
+            int[,] test = new int[,]
+            {
+              {3,4,5,6,7},
+              {8,9,10,11,2},
+              {1,2,1,2,1}
+            };
+            Metods metods = new Metods();
+           testy = metods.Char_map(test);
+            for(int shsh =0;shsh<testy.GetLength(0);shsh++)
+            {
+                for(int shs=0;shs<testy.GetLength(1);shs++)
+                {
+                    Console.Write(testy[shsh, shs]);
+                }
+                Console.WriteLine();
+            }
+            Console.WriteLine("всё");
+            Console.ReadKey();
+
+            {
+                
+               ConsoleKeyInfo KAKA;
+               for(int ror =0; ror !=20;ror++)
+               {
+                   KAKA = Console.ReadKey();
+                   Console.WriteLine(KAKA.KeyChar);
+               }
+               */
+          }
+
+            int kx, ky;
             int[] prod_map = new int[4];
+            int max_X_map = 0;
+            int max_Y_map = 0;
             Random random = new Random();
+            Metods metods = new Metods();
             int itog_location_shablon = 0;
             int itog_shablon = 0;
-            int peremen = 0;
-            int peremen_2 = 0;
+            //введение данных
+            while (max_X_map == 0 && max_Y_map == 0)
+            {
+                Console.WriteLine("Введите массив");
+                Console.Write("X - ");
+                int.TryParse(Console.ReadLine(), out max_X_map);
+                Console.Write("Y - ");
+                int.TryParse(Console.ReadLine(), out max_Y_map);
+            }
+            int[,] map = new int[max_X_map, max_Y_map];
+            max_X_map = max_X_map - 1;
+            max_Y_map = max_Y_map - 1;
+            //определение входа
+            ky = max_Y_map;
+            kx = random.Next(0, max_X_map + 1);
+
+            int peremen;
+            int peremen_2;
+            int peremen_3 = 0;
+            int sh;
+           while (peremen_3!=1)
+           {
+            peremen=0;
+            peremen_2=0;
             //получение информации окружения взависимости от положения проверяемой клетки
             //углы
             if (kx == 0 && ky == 0)//правый верхний угол
-            {
-                prod_map[0] = 0;
-                prod_map[1] = 0;
-
-                if (map[kx + 1, ky] == 0)
                 {
-                    prod_map[2] = 1;
-                }
-                else { prod_map[2] = 0; }
+                    prod_map[0] = 0;
+                    prod_map[1] = 0;
 
-                if (map[kx, ky + 1] == 0)
-                {
-                    prod_map[3] = 1;
+                    if (map[kx + 1, ky] == 0)
+                    {
+                        prod_map[2] = 1;
+                    }
+                    else { prod_map[2] = 0; }
+
+                    if (map[kx, ky + 1] == 0)
+                    {
+                        prod_map[3] = 1;
+                    }
+                    else { prod_map[3] = 0; }
                 }
-                else { prod_map[3] = 0; }
-            }
             else if (kx == 2 && ky == 2)//левый нижний угол
-            {
-                prod_map[2] = 0;
-                prod_map[3] = 0;
-
-                if (map[kx - 1, ky] == 0)
                 {
-                    prod_map[0] = 1;
-                }
-                else { prod_map[0] = 0; }
+                    prod_map[2] = 0;
+                    prod_map[3] = 0;
 
-                if (map[kx, ky - 1] == 0)
-                {
-                    prod_map[1] = 1;
+                    if (map[kx - 1, ky] == 0)
+                    {
+                        prod_map[0] = 1;
+                    }
+                    else { prod_map[0] = 0; }
+
+                    if (map[kx, ky - 1] == 0)
+                    {
+                        prod_map[1] = 1;
+                    }
+                    else { prod_map[1] = 0; }
                 }
-                else { prod_map[1] = 0; }
-            }
             else if (kx == 2 && ky == 0)//левый верхний угол
-            {
-                prod_map[1] = 0;
-                prod_map[2] = 0;
-
-                if (map[kx - 1, ky] == 0)
                 {
-                    prod_map[0] = 1;
-                }
-                else { prod_map[0] = 0; }
+                    prod_map[1] = 0;
+                    prod_map[2] = 0;
 
-                if (map[kx, ky + 1] == 0)
-                {
-                    prod_map[3] = 1;
+                    if (map[kx - 1, ky] == 0)
+                    {
+                        prod_map[0] = 1;
+                    }
+                    else { prod_map[0] = 0; }
+
+                    if (map[kx, ky + 1] == 0)
+                    {
+                        prod_map[3] = 1;
+                    }
+                    else { prod_map[3] = 0; }
                 }
-                else { prod_map[3] = 0; }
-            }
             else if (kx == 0 && ky == 2)//правый нижний угол
-            {
-                prod_map[0] = 0;
-                prod_map[3] = 0;
-
-                if (map[kx + 1, ky] == 0)
                 {
-                    prod_map[2] = 1;
-                }
-                else { prod_map[2] = 0; }
+                    prod_map[0] = 0;
+                    prod_map[3] = 0;
 
-                if (map[kx, ky - 1] == 0)
-                {
-                    prod_map[1] = 1;
+                    if (map[kx + 1, ky] == 0)
+                    {
+                        prod_map[2] = 1;
+                    }
+                    else { prod_map[2] = 0; }
+
+                    if (map[kx, ky - 1] == 0)
+                    {
+                        prod_map[1] = 1;
+                    }
+                    else { prod_map[1] = 0; }
                 }
-                else { prod_map[1] = 0; }
-            }
-            // края
+            //края
             else if (kx == 0)//право
-            {
-                prod_map[0] = 0;
-
-                if (map[kx, ky - 1] == 0)
                 {
-                    prod_map[1] = 1;
-                }
-                else { prod_map[1] = 0; }
+                    prod_map[0] = 0;
 
-                if (map[kx + 1, ky] == 0)
-                {
-                    prod_map[2] = 1;
-                }
-                else { prod_map[2] = 0; }
+                    if (map[kx, ky - 1] == 0)
+                    {
+                        prod_map[1] = 1;
+                    }
+                    else { prod_map[1] = 0; }
 
-                if (map[kx, ky + 1] == 0)
-                {
-                    prod_map[3] = 1;
+                    if (map[kx + 1, ky] == 0)
+                    {
+                        prod_map[2] = 1;
+                    }
+                    else { prod_map[2] = 0; }
+
+                    if (map[kx, ky + 1] == 0)
+                    {
+                        prod_map[3] = 1;
+                    }
+                    else { prod_map[3] = 0; }
                 }
-                else { prod_map[3] = 0; }
-            }
             else if (kx == 2)//лево
-            {
-                prod_map[2] = 0;
-
-                if (map[kx, ky - 1] == 0)
                 {
-                    prod_map[1] = 1;
-                }
-                else { prod_map[1] = 0; }
+                    prod_map[2] = 0;
 
-                if (map[kx - 1, ky] == 0)
-                {
-                    prod_map[0] = 1;
-                }
-                else { prod_map[0] = 0; }
+                    if (map[kx, ky - 1] == 0)
+                    {
+                        prod_map[1] = 1;
+                    }
+                    else { prod_map[1] = 0; }
 
-                if (map[kx, ky + 1] == 0)
-                {
-                    prod_map[3] = 1;
+                    if (map[kx - 1, ky] == 0)
+                    {
+                        prod_map[0] = 1;
+                    }
+                    else { prod_map[0] = 0; }
+
+                    if (map[kx, ky + 1] == 0)
+                    {
+                        prod_map[3] = 1;
+                    }
+                    else { prod_map[3] = 0; }
                 }
-                else { prod_map[3] = 0; }
-            }
             else if (ky == 2)//низ
-            {
-                prod_map[3] = 0;
-
-                if (map[kx, ky - 1] == 0)
                 {
-                    prod_map[1] = 1;
-                }
-                else { prod_map[1] = 0; }
+                    prod_map[3] = 0;
 
-                if (map[kx - 1, ky] == 0)
-                {
-                    prod_map[0] = 1;
-                }
-                else { prod_map[0] = 0; }
+                    if (map[kx, ky - 1] == 0)
+                    {
+                        prod_map[1] = 1;
+                    }
+                    else { prod_map[1] = 0; }
 
-                if (map[kx + 1, ky] == 0)
-                {
-                    prod_map[2] = 1;
+                    if (map[kx - 1, ky] == 0)
+                    {
+                        prod_map[0] = 1;
+                    }
+                    else { prod_map[0] = 0; }
+
+                    if (map[kx + 1, ky] == 0)
+                    {
+                        prod_map[2] = 1;
+                    }
+                    else { prod_map[2] = 0; }
                 }
-                else { prod_map[2] = 0; }
-            }
             else if (ky == 0)//верх
-            {
-                prod_map[1] = 0;
-
-                if (map[kx, ky + 1] == 0)
                 {
-                    prod_map[3] = 1;
-                }
-                else { prod_map[3] = 0; }
+                    prod_map[1] = 0;
 
-                if (map[kx - 1, ky] == 0)
-                {
-                    prod_map[0] = 1;
-                }
-                else { prod_map[0] = 0; }
+                    if (map[kx, ky + 1] == 0)
+                    {
+                        prod_map[3] = 1;
+                    }
+                    else { prod_map[3] = 0; }
 
-                if (map[kx + 1, ky] == 0)
-                {
-                    prod_map[2] = 1;
+                    if (map[kx - 1, ky] == 0)
+                    {
+                        prod_map[0] = 1;
+                    }
+                    else { prod_map[0] = 0; }
+
+                    if (map[kx + 1, ky] == 0)
+                    {
+                        prod_map[2] = 1;
+                    }
+                    else { prod_map[2] = 0; }
                 }
-                else { prod_map[2] = 0; }
-            }
             //Середина
             else if (kx == 1 && ky == 1)
-            {
-                if (map[kx, ky + 1] == 0)
                 {
-                    prod_map[3] = 1;
-                }
-                else { prod_map[3] = 0; }
+                    if (map[kx, ky + 1] == 0)
+                    {
+                        prod_map[3] = 1;
+                    }
+                    else { prod_map[3] = 0; }
 
-                if (map[kx, ky - 1] == 0)
-                {
-                    prod_map[1] = 1;
-                }
-                else { prod_map[1] = 0; }
+                    if (map[kx, ky - 1] == 0)
+                    {
+                        prod_map[1] = 1;
+                    }
+                    else { prod_map[1] = 0; }
 
-                if (map[kx - 1, ky] == 0)
-                {
-                    prod_map[0] = 1;
-                }
-                else { prod_map[0] = 0; }
+                    if (map[kx - 1, ky] == 0)
+                    {
+                        prod_map[0] = 1;
+                    }
+                    else { prod_map[0] = 0; }
 
-                if (map[kx + 1, ky] == 0)
-                {
-                    prod_map[2] = 1;
+                    if (map[kx + 1, ky] == 0)
+                    {
+                        prod_map[2] = 1;
+                    }
+                    else { prod_map[2] = 0; }
                 }
-                else { prod_map[2] = 0; }
-            }
             //входы шаблонов
             {
                 //условия которые проверяют шаблон клетки и взависимости от шаьлона ставит гарантированную "занятость" клетки окружения
@@ -273,8 +322,9 @@ namespace F_WORK
                 }
                 //тупики не трогаю
             }
+
             //генерация места шаблона с учитыванием окружения
-            while (peremen != 1)
+            while (peremen != 1)///////////////////////////ощибка из за окружения...смотри вверх
             {
                 itog_location_shablon = random.Next(0, 4);
                 switch (itog_location_shablon)
@@ -312,15 +362,20 @@ namespace F_WORK
                             break;
                         }
                 }
-            }
+                    Console.Write(prod_map[0]);
+                    Console.Write(prod_map[1]);
+                    Console.Write(prod_map[2]);
+                    Console.Write(prod_map[3]);
+                    Console.WriteLine();
+                }
+
             //генерация максимально подходящего шаблона
-            //ёбаный английский язык блять нахуй сукадолбаёб
-            { 
-            //для генерации нужно:1 - естественно рандомизер
-            //                    2 - условия(какие шаблоны(в пользу направления пути) воопше разрешены в тех или иных координатах окружения)
-            //                    3 - +БОНУС - зделать проверятор тупикоB, алгоритм должен делать неповторяемые последовательности шагов по лаберинту начиная с выхода свеже-(типо)поставленого шаблона и если за примерно 200 попыток не доходит до выхода то генерируется другой шаблон
-             }
-            while(peremen_2 !=1)
+            {
+                //для генерации нужно:1 - естественно рандомизер
+                //                    2 - условия(какие шаблоны(в пользу направления пути) воопше разрешены в тех или иных координатах окружения)
+                //                    3 - +БОНУС - зделать проверятор тупикоB, алгоритм должен делать неповторяемые последовательности шагов по лаберинту начиная с выхода свеже-(типо)поставленого шаблона и если за примерно 200 попыток не доходит до выхода то генерируется другой шаблон
+            }
+            while (peremen_2 != 1)
             {
                 itog_shablon = random.Next(1, 12);
                 switch (itog_shablon)
@@ -332,17 +387,24 @@ namespace F_WORK
                         }
                     case 1:
                         {
-                            if(itog_location_shablon == 1 || itog_location_shablon == 3)
+                            if (itog_location_shablon == 1 || itog_location_shablon == 3)
                             {
-                                peremen_2 = 1;
+                                if (ky != max_Y_map && ky != 1)     //!!!
+                                {
+                                    peremen_2 = 1;
+                                }
                             }
+
                             break;
                         }
                     case 2:
                         {
                             if (itog_location_shablon == 0 || itog_location_shablon == 2)
                             {
-                                peremen_2 = 1;
+                                if (kx != max_X_map && kx != 1)     //!!!
+                                {
+                                    peremen_2 = 1;
+                                }
                             }
                             break;
                         }
@@ -350,7 +412,13 @@ namespace F_WORK
                         {
                             if (itog_location_shablon == 1)
                             {
-                                peremen_2 = 1;
+                                if (kx > 0)//не ставится только если проверяемая клеткая находится на крае противоположному выходу поворотного шаблона
+                                {
+                                    if (map[kx - 1, ky - 1] == 0)
+                                    {
+                                        peremen_2 = 1;
+                                    }
+                                }
                             }
                             break;
                         }
@@ -358,29 +426,67 @@ namespace F_WORK
                         {
                             if (itog_location_shablon == 1)
                             {
-                                peremen_2 = 1;
+                                if (kx < max_X_map)//не ставится только если проверяемая клеткая находится на крае противоположному выходу поворотного шаблона
+                                {
+                                    if (map[kx + 1, ky + 1] == 0)
+                                    {
+                                        peremen_2 = 1;
+                                    }
+                                }
                             }
                             break;
                         }
                     case 5:
                         {
-                            if (itog_location_shablon == 2 || itog_location_shablon == 3)
+                            if (itog_location_shablon == 2)
                             {
-                                peremen_2 = 1;
+                                if (ky > 0)//не ставится только если проверяемая клеткая находится на крае противоположному выходу поворотного шаблона
+                                {
+                                    if (map[kx + 1, ky - 1] == 0)
+                                    {
+                                        peremen_2 = 1;
+                                    }
+                                }
+                            }
+                            else if (itog_location_shablon == 3)
+                            {
+                                if (kx > 0)//не ставится только если проверяемая клеткая находится на крае противоположному выходу поворотного шаблона
+                                {
+                                    if (map[kx - 1, ky + 1] == 0)
+                                    {
+                                        peremen_2 = 1;
+                                    }
+                                }
                             }
                             break;
                         }
                     case 6:
                         {
-                            if (itog_location_shablon == 0 || itog_location_shablon == 3)
+                            if (itog_location_shablon == 0)
                             {
-                                peremen_2 = 1;
+                                if (ky > 0)//не ставится только если проверяемая клеткая находится на крае противоположному выходу поворотного шаблона
+                                {
+                                    if (map[kx - 1, ky - 1] == 0)
+                                    {
+                                        peremen_2 = 1;
+                                    }
+                                }
+                            }
+                            else if (itog_location_shablon == 3)
+                            {
+                                if (kx < max_X_map)//не ставится только если проверяемая клеткая находится на крае противоположному выходу поворотного шаблона
+                                {
+                                    if (map[kx + 1, ky + 1] == 0)
+                                    {
+                                        peremen_2 = 1;
+                                    }
+                                }
                             }
                             break;
                         }
                     case 7:
                         {
-                            if ( itog_location_shablon == 1)
+                            if (itog_location_shablon == 1)
                             {
                                 peremen_2 = 1;
                             }
@@ -388,7 +494,39 @@ namespace F_WORK
                         }
                     case 8:
                         {
-                            if (itog_location_shablon == 0 || itog_location_shablon == 2 || itog_location_shablon == 3)
+                            if (itog_location_shablon == 0)///////////////////////////////////////////////////////////////////////////////////
+                            {
+                                if (kx - 1 == 0 && ky > 0)
+                                {
+                                    if (map[kx - 1, ky - 1] == 0)
+                                    {
+                                        peremen_2 = 1;
+                                    }
+                                }
+                                else if (kx == max_X_map)
+                                {
+                                    peremen_2 = 1;
+                                }
+                            }
+                            else if (itog_location_shablon == 2)
+                            {
+                                if (kx + 1 == max_X_map && ky > 0)
+                                {
+                                    if (map[kx + 1, ky - 1] == 0)
+                                    {
+                                        peremen_2 = 1;
+                                    }
+                                }
+                                else if (kx == 0)
+                                {
+                                    peremen_2 = 1;
+                                }
+                            }
+                            else if (itog_location_shablon == 3)
+                            {
+                                peremen_2 = 1;
+                            }
+                            if (ky == 0 && (itog_location_shablon == 0 || itog_location_shablon == 2))
                             {
                                 peremen_2 = 1;
                             }
@@ -396,7 +534,22 @@ namespace F_WORK
                         }
                     case 9:
                         {
-                            if (itog_location_shablon == 2 || itog_location_shablon == 1 || itog_location_shablon == 3)
+                            if (itog_location_shablon == 3)///////////////////////////////////////////////////////////////////////////////////
+                            {
+                                if (!(kx == 0 && ky + 1 == max_Y_map))
+                                {
+                                    peremen_2 = 1;
+                                }
+                            }
+                            else if (itog_location_shablon == 1)
+                            {
+                                peremen_2 = 1;
+                            }
+                            else if (itog_location_shablon == 2)
+                            {
+                                peremen_2 = 1;
+                            }
+                            if (ky == 0 && (itog_location_shablon == 2))
                             {
                                 peremen_2 = 1;
                             }
@@ -406,16 +559,69 @@ namespace F_WORK
                         {
                             if (itog_location_shablon == 0 || itog_location_shablon == 1 || itog_location_shablon == 3)
                             {
+                                if (itog_location_shablon == 3)///////////////////////////////////////////////////////////////////////////////////
+                                {
+                                    if (!(kx == max_X_map && ky + 1 == max_Y_map))
+                                    {
+                                        peremen_2 = 1;
+                                    }
+                                }
+                                else if (itog_location_shablon == 1)
+                                {
+                                    peremen_2 = 1;
+                                }
+                                else if (itog_location_shablon == 0)
+                                {
+                                    peremen_2 = 1;
+                                }
+                            }
+                            if (ky == 0 && (itog_location_shablon == 0))
+                            {
                                 peremen_2 = 1;
                             }
                             break;
                         }
                 }
-            }
-            //засунуть число в карту
+                    metods.Char_map(map);
+                }
             // зделать условие которое передвигает координаты проверяемой клетки взависимости от иотогового положения сежегоо шаблона и потом зациклить
-
-
+            switch (itog_location_shablon)
+            {
+                case 0:
+                    {
+                        map[kx - 1, ky] = itog_shablon;
+                            kx = kx - 1;
+                        break;
+                    }
+                case 1:
+                    {
+                        map[kx, ky - 1] = itog_shablon;
+                            ky = ky - 1;
+                        break;
+                    }
+                case 2:
+                    {
+                        map[kx + 1, ky] = itog_shablon;
+                            kx = kx + 1;
+                        break;
+                    }
+                case 3:
+                    {
+                        map[kx, ky + 1] = itog_shablon;
+                            ky = ky + 1;
+                        break;
+                    }
+            }
+                //цикл проверяющий верхнюю строку на наличие "выходных шаблонов"
+            for(sh = 0;sh <= max_X_map;sh++)
+            {
+                    if(map[sh,0] ==11|| map[sh, 0]==6 || map[sh, 0]==5 || map[sh, 0]==8 || map[sh, 0]==9 || map[sh, 0]==10 || map[sh, 0]==1)
+                    {
+                        peremen_3=1;
+                    }     
+            }
+            metods.Char_map(map);
+           }
         }
     }
         public enum Shablons
@@ -435,8 +641,6 @@ namespace F_WORK
             Тупик_правый=12,
             Тупик_верхний=13,
             Тупик_нижний=14
-
-        }
-       
-    }
+        }  
+}
 
