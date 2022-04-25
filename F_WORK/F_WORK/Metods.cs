@@ -14,6 +14,8 @@ namespace F_WORK
             int sh_2;
             int X = 1;
             int Y = 1;
+            int playerX;
+            int playerY;
             for(int sh =0;sh<arr.GetLength(1);sh++)
             {
                 X = 1;
@@ -25,15 +27,15 @@ namespace F_WORK
                             {
                                 char_map[X, Y] = 'Q';
 
-                                char_map[X, Y+1] = 'P';
-                                char_map[X, Y-1] = 'P';
+                                char_map[X, Y+1] = '▇';
+                                char_map[X, Y-1] = '▇';
                                 char_map[X + 1, Y] = 'Q';
                                 char_map[X - 1, Y] = 'Q';
 
-                                char_map[X + 1, Y + 1] = 'P';
-                                char_map[X - 1, Y + 1] = 'P';
-                                char_map[X + 1, Y - 1] = 'P';
-                                char_map[X - 1, Y - 1] = 'P';
+                                char_map[X + 1, Y + 1] = '▇';
+                                char_map[X - 1, Y + 1] = '▇';
+                                char_map[X + 1, Y - 1] = '▇';
+                                char_map[X - 1, Y - 1] = '▇';
                                 break;
                             }
                         case 2:
@@ -41,69 +43,69 @@ namespace F_WORK
                                 char_map[X, Y] = 'Q';
                                 char_map[X, Y + 1] = 'Q';
                                 char_map[X, Y - 1] = 'Q';
-                                char_map[X + 1, Y] = 'P';
-                                char_map[X - 1, Y] = 'P';
-                                char_map[X + 1, Y + 1] = 'P';
-                                char_map[X - 1, Y + 1] = 'P';
-                                char_map[X + 1, Y - 1] = 'P';
-                                char_map[X - 1, Y - 1] = 'P';
+                                char_map[X + 1, Y] = '▇';
+                                char_map[X - 1, Y] = '▇';
+                                char_map[X + 1, Y + 1] = '▇';
+                                char_map[X - 1, Y + 1] = '▇';
+                                char_map[X + 1, Y - 1] = '▇';
+                                char_map[X - 1, Y - 1] = '▇';
                                 break;
                             }
                         case 3:
                             {
                                 char_map[X, Y] = 'Q';
 
-                                char_map[X, Y + 1] = 'P';
+                                char_map[X, Y + 1] = '▇';
                                 char_map[X, Y - 1] = 'Q';
                                 char_map[X + 1, Y] = 'Q';
-                                char_map[X - 1, Y] = 'P';
+                                char_map[X - 1, Y] = '▇';
 
-                                char_map[X + 1, Y + 1] = 'P';
-                                char_map[X - 1, Y + 1] = 'P';
-                                char_map[X + 1, Y - 1] = 'P';
-                                char_map[X - 1, Y - 1] = 'P';
+                                char_map[X + 1, Y + 1] = '▇';
+                                char_map[X - 1, Y + 1] = '▇';
+                                char_map[X + 1, Y - 1] = '▇';
+                                char_map[X - 1, Y - 1] = '▇';
                                 break;
                             }
                         case 4:
                             {
                                 char_map[X, Y] = 'Q';
                                 char_map[X, Y + 1] = 'Q';
-                                char_map[X, Y - 1] = 'P';
+                                char_map[X, Y - 1] = '█';
                                 char_map[X + 1, Y] = 'Q';
-                                char_map[X - 1, Y] = 'P';
+                                char_map[X - 1, Y] = '█';
 
-                                char_map[X + 1, Y + 1] = 'P';
-                                char_map[X - 1, Y + 1] = 'P';
-                                char_map[X + 1, Y - 1] = 'P';
-                                char_map[X - 1, Y - 1] = 'P';
+                                char_map[X + 1, Y + 1] = '▇';
+                                char_map[X - 1, Y + 1] = '▇';
+                                char_map[X + 1, Y - 1] = '▇';
+                                char_map[X - 1, Y - 1] = '▇';
                                 break;
                             }
                         case 5:
                             {
                                 char_map[X, Y] = 'Q';
-                                char_map[X, Y + 1] = 'P';
+                                char_map[X, Y + 1] = '▇';
                                 char_map[X, Y - 1] = 'Q';
-                                char_map[X + 1, Y] = 'P';
+                                char_map[X + 1, Y] = '▇';
                                 char_map[X - 1, Y] = 'Q';
 
-                                char_map[X + 1, Y + 1] = 'P';
-                                char_map[X - 1, Y + 1] = 'P';
-                                char_map[X + 1, Y - 1] = 'P';
-                                char_map[X - 1, Y - 1] = 'P';
+                                char_map[X + 1, Y + 1] = '▇';
+                                char_map[X - 1, Y + 1] = '▇';
+                                char_map[X + 1, Y - 1] = '▇';
+                                char_map[X - 1, Y - 1] = '▇';
                                 break;
                             }
                         case 6:
                             {
                                 char_map[X, Y] = 'Q';
                                 char_map[X, Y + 1] = 'Q';
-                                char_map[X, Y - 1] = 'P';
-                                char_map[X + 1, Y] = 'P';
+                                char_map[X, Y - 1] = '▇';
+                                char_map[X + 1, Y] = '▇';
                                 char_map[X - 1, Y] = 'Q';
 
-                                char_map[X + 1, Y + 1] = 'P';
-                                char_map[X - 1, Y + 1] = 'P';
-                                char_map[X + 1, Y - 1] = 'P';
-                                char_map[X - 1, Y - 1] = 'P';
+                                char_map[X + 1, Y + 1] = '▇';
+                                char_map[X - 1, Y + 1] = '▇';
+                                char_map[X + 1, Y - 1] = '▇';
+                                char_map[X - 1, Y - 1] = '▇';
                                 break;
                             }
                         case 7:
@@ -113,12 +115,12 @@ namespace F_WORK
                                 char_map[X, Y + 1] = 'Q';
                                 char_map[X, Y - 1] = 'Q';
                                 char_map[X + 1, Y] = 'Q';
-                                char_map[X - 1, Y] = 'P';
+                                char_map[X - 1, Y] = '▇';
 
-                                char_map[X + 1, Y + 1] = 'P';
-                                char_map[X - 1, Y + 1] = 'P';
-                                char_map[X + 1, Y - 1] = 'P';
-                                char_map[X - 1, Y - 1] = 'P';
+                                char_map[X + 1, Y + 1] = '▇';
+                                char_map[X - 1, Y + 1] = '▇';
+                                char_map[X + 1, Y - 1] = '▇';
+                                char_map[X - 1, Y - 1] = '▇';
                                 break;
                             }
                         case 8:
@@ -127,28 +129,28 @@ namespace F_WORK
 
                                 char_map[X, Y + 1] = 'Q';
                                 char_map[X, Y - 1] = 'Q';
-                                char_map[X + 1, Y] = 'P';
+                                char_map[X + 1, Y] = '▇';
                                 char_map[X - 1, Y] = 'Q';
 
-                                char_map[X + 1, Y + 1] = 'P';
-                                char_map[X - 1, Y + 1] = 'P';
-                                char_map[X + 1, Y - 1] = 'P';
-                                char_map[X - 1, Y - 1] = 'P';
+                                char_map[X + 1, Y + 1] = '▇';
+                                char_map[X - 1, Y + 1] = '▇';
+                                char_map[X + 1, Y - 1] = '▇';
+                                char_map[X - 1, Y - 1] = '▇';
                                 break;
                             }
                         case 9:
                             {
                                 char_map[X, Y] = 'Q';
 
-                                char_map[X, Y + 1] = 'P';
+                                char_map[X, Y + 1] = '▇';
                                 char_map[X, Y - 1] = 'Q';
                                 char_map[X + 1, Y] = 'Q';
                                 char_map[X - 1, Y] = 'Q';
 
-                                char_map[X + 1, Y + 1] = 'P';
-                                char_map[X - 1, Y + 1] = 'P';
-                                char_map[X + 1, Y - 1] = 'P';
-                                char_map[X - 1, Y - 1] = 'P';
+                                char_map[X + 1, Y + 1] = '▇';
+                                char_map[X - 1, Y + 1] = '▇';
+                                char_map[X + 1, Y - 1] = '▇';
+                                char_map[X - 1, Y - 1] = '▇';
                                 break;
                             }
                         case 10:
@@ -156,14 +158,14 @@ namespace F_WORK
                                 char_map[X, Y] = 'Q';
 
                                 char_map[X, Y + 1] = 'Q';
-                                char_map[X, Y - 1] = 'P';
+                                char_map[X, Y - 1] = '▇';
                                 char_map[X + 1, Y] = 'Q';
                                 char_map[X - 1, Y] = 'Q';
 
-                                char_map[X + 1, Y + 1] = 'P';
-                                char_map[X - 1, Y + 1] = 'P';
-                                char_map[X + 1, Y - 1] = 'P';
-                                char_map[X - 1, Y - 1] = 'P';
+                                char_map[X + 1, Y + 1] = '▇';
+                                char_map[X - 1, Y + 1] = '▇';
+                                char_map[X + 1, Y - 1] = '▇';
+                                char_map[X - 1, Y - 1] = '▇';
                                 break;
                             }
                         case 11:
@@ -175,10 +177,25 @@ namespace F_WORK
                                 char_map[X + 1, Y] = 'Q';
                                 char_map[X - 1, Y] = 'Q';
 
-                                char_map[X + 1, Y + 1] = 'P';
-                                char_map[X - 1, Y + 1] = 'P';
-                                char_map[X + 1, Y - 1] = 'P';
-                                char_map[X - 1, Y - 1] = 'P';
+                                char_map[X + 1, Y + 1] = '▇';
+                                char_map[X - 1, Y + 1] = '▇';
+                                char_map[X + 1, Y - 1] = '▇';
+                                char_map[X - 1, Y - 1] = '▇';
+                                break;
+                            }
+                        default:
+                            {
+                                char_map[X, Y] = 'Q';
+
+                                char_map[X, Y + 1] = 'Q';
+                                char_map[X, Y - 1] = 'Q';
+                                char_map[X + 1, Y] = 'Q';
+                                char_map[X - 1, Y] = 'Q';
+
+                                char_map[X + 1, Y + 1] = 'Q';
+                                char_map[X - 1, Y + 1] = 'Q';
+                                char_map[X + 1, Y - 1] = 'Q';
+                                char_map[X - 1, Y - 1] = 'Q';
                                 break;
                             }
                     }
