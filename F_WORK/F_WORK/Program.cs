@@ -6,44 +6,14 @@ namespace F_WORK
     {
         static void Main(string[] args)
         {
-            {
-                /*
- Char[,] testy;
- int[,] test = new int[,]
-                {
-                  {3,4,5,6,7},
-                  {8,9,10,11,2},
-                  {1,2,1,2,1}
-                };
- Metods metods = new Metods();
- testy = metods.Char_map(test);
- for(int shsh =0;shsh<testy.GetLength(0);shsh++)
-                {
- for(int shs=0;shs<testy.GetLength(1);shs++)
-                    {
- Console.Write(testy[shsh, shs]);
-                    }
- Console.WriteLine();
-                }
- Console.WriteLine("всё");
- Console.ReadKey();
-                {
- ConsoleKeyInfo KAKA;
- for(int ror =0; ror !=20;ror++)
-                   {
- KAKA = Console.ReadKey();
- Console.WriteLine(KAKA.KeyChar);
-                   }
-                   */
-            }
             int kx, ky;
-            int[] prod_map = new int[4];
+            int[] prod_map;
             char[,] char_map;
             int max_X_map = 0;
             int max_Y_map = 0;
             Random random = new Random();
             Metods metods = new Metods();
-            int itog_location_shablon = 0;
+            int itog_location_shablon;
             int itog_shablon = 0;
             while (max_X_map == 0 && max_Y_map == 0)
             {
@@ -71,38 +41,47 @@ namespace F_WORK
             {
                 map[kx, ky] = 1;
             }
-            int peremen;
             int peremen_2;
             int peremen_3 = 0;
             int peremen_4;
             int sh;
             int smena;
             int smena_2;
-            int otvet = 0;
             int game = 0;
-            int game_peremen = 0;
+            int game_peremen;
             int victory = 0;
             double speed = 0;
-            double speedrun = 0;
+            double speedrun;
             ConsoleKeyInfo Button = Console.ReadKey();
             while (peremen_3 != 1)
             {
                 prod_map = metods.Check_mashine(kx, ky, map);
-                itog_location_shablon = metods.Generat_mashine_part_1(prod_map,kx,ky,map);
+                Console.Write(prod_map[0]);
+                Console.Write(prod_map[1]);
+                Console.Write(prod_map[2]);
+                Console.WriteLine(prod_map[3]);
+                itog_location_shablon = metods.Metod_itog_location_shablon(prod_map,kx,ky,map);
                 if(itog_location_shablon ==10)
                 {
                     if (prod_map[0] == 0 && prod_map[1] == 0 && prod_map[2] == 0 && prod_map[3] == 0)
-                    {
+                    {                       
                         for (smena = 0; smena < map.GetLength(1); smena++)
                         {
                             for (smena_2 = 0; smena_2 < map.GetLength(0); smena_2++)
                             {
+                                Console.WriteLine("eop");
                                 if (map[smena_2, smena] != 0)
                                 {
                                     kx = smena_2;
                                     ky = smena;
-                                    smena_2 = map.GetLength(0);
-                                    smena = map.GetLength(1);
+                                    Console.WriteLine("X - " + kx);
+                                    Console.WriteLine("Y - " + ky);
+                                    prod_map = metods.Check_mashine(kx, ky, map);
+                                    if (prod_map[0] != 0 || prod_map[1] != 0 || prod_map[2] != 0 || prod_map[3] != 0)
+                                    {
+                                        smena_2 = map.GetLength(0);
+                                        smena = map.GetLength(1);
+                                    }
                                 }
                             }
                         }
@@ -150,8 +129,7 @@ namespace F_WORK
                         Console.Write(map[f, t]);
                     }
                     Console.WriteLine();
-                }
-                metods.Char_map(map,otvet);      
+                }     
             }
             for (int t = 0; t < map.GetLength(1); t++)
             {
@@ -174,7 +152,7 @@ namespace F_WORK
                             }
                             else
                             {
-                                itog_location_shablon = metods.Generat_mashine_part_1(prod_map, kx, ky, map);
+                                itog_location_shablon = metods.Metod_itog_location_shablon(prod_map, kx, ky, map);
                                 peremen_2 = 0;
                                 while (peremen_2 != 1)
                                 {
@@ -238,7 +216,7 @@ namespace F_WORK
                                             {
                                                 if (itog_location_shablon == 1)
                                                 {
-                                                    if (kx > 0)//не ставится только если проверяемая клеткая находится на крае противоположному выходу поворотного шаблона
+                                                    if (kx > 0)
                                                     {
                                                         if (map[kx - 1, ky - 1] == 0)
                                                         {
@@ -248,7 +226,7 @@ namespace F_WORK
                                                 }
                                                 if (itog_location_shablon == 2)
                                                 {
-                                                    if (ky != max_Y_map)//не ставится только если проверяемая клеткая находится на крае противоположному выходу поворотного шаблона
+                                                    if (ky != max_Y_map)
                                                     {
                                                         if (map[kx + 1, ky + 1] == 0)
                                                         {
@@ -262,7 +240,7 @@ namespace F_WORK
                                             {
                                                 if (itog_location_shablon == 1)
                                                 {
-                                                    if (kx < max_X_map)//не ставится только если проверяемая клеткая находится на крае противоположному выходу поворотного шаблона
+                                                    if (kx < max_X_map)
                                                     {
                                                         if (map[kx + 1, ky - 1] == 0)
                                                         {
@@ -272,7 +250,7 @@ namespace F_WORK
                                                 }
                                                 if (itog_location_shablon == 0)
                                                 {
-                                                    if (ky != max_Y_map)//не ставится только если проверяемая клеткая находится на крае противоположному выходу поворотного шаблона
+                                                    if (ky != max_Y_map)
                                                     {
                                                         if (map[kx - 1, ky + 1] == 0)
                                                         {
@@ -286,7 +264,7 @@ namespace F_WORK
                                             {
                                                 if (itog_location_shablon == 2)
                                                 {
-                                                    if (ky > 0)//не ставится только если проверяемая клеткая находится на крае противоположному выходу поворотного шаблона
+                                                    if (ky > 0)
                                                     {
                                                         if (map[kx + 1, ky - 1] == 0)
                                                         {
@@ -296,7 +274,7 @@ namespace F_WORK
                                                 }
                                                 else if (itog_location_shablon == 3)
                                                 {
-                                                    if (kx > 0)//не ставится только если проверяемая клеткая находится на крае противоположному выходу поворотного шаблона
+                                                    if (kx > 0)
                                                     {
                                                         if (map[kx - 1, ky + 1] == 0)
                                                         {
@@ -310,7 +288,7 @@ namespace F_WORK
                                             {
                                                 if (itog_location_shablon == 0)
                                                 {
-                                                    if (ky > 0)//не ставится только если проверяемая клеткая находится на крае противоположному выходу поворотного шаблона
+                                                    if (ky > 0)
                                                     {
                                                         if (map[kx - 1, ky - 1] == 0)
                                                         {
@@ -320,7 +298,7 @@ namespace F_WORK
                                                 }
                                                 else if (itog_location_shablon == 3)
                                                 {
-                                                    if (kx < max_X_map)//не ставится только если проверяемая клеткая находится на крае противоположному выходу поворотного шаблона
+                                                    if (kx < max_X_map)
                                                     {
                                                         if (map[kx + 1, ky + 1] == 0)
                                                         {
@@ -332,7 +310,7 @@ namespace F_WORK
                                             }
                                         case 7:
                                             {
-                                                if (itog_location_shablon == 0)///////////////////////////////////////////////////////////////////////////////////
+                                                if (itog_location_shablon == 0)
                                                 {
                                                     peremen_2 = 1;
                                                 }
@@ -348,7 +326,7 @@ namespace F_WORK
                                             }
                                         case 8:
                                             {
-                                                if (itog_location_shablon == 0)///////////////////////////////////////////////////////////////////////////////////
+                                                if (itog_location_shablon == 0)
                                                 {
                                                     peremen_2 = 1;
                                                 }
@@ -364,7 +342,7 @@ namespace F_WORK
                                             }
                                         case 9:
                                             {
-                                                if (itog_location_shablon == 1)///////////////////////////////////////////////////////////////////////////////////
+                                                if (itog_location_shablon == 1)
                                                 {
                                                     peremen_2 = 1;
                                                 }
@@ -380,7 +358,7 @@ namespace F_WORK
                                             }
                                         case 10:
                                             {
-                                                if (itog_location_shablon == 0)///////////////////////////////////////////////////////////////////////////////////
+                                                if (itog_location_shablon == 0)
                                                 {
                                                     peremen_2 = 1;
                                                 }
@@ -423,14 +401,36 @@ namespace F_WORK
                                             break;
                                         }
                                 }                         
-                                metods.Char_map(map,otvet);
                             }
                         }
                     }
                 }
             }
-            otvet = 1;
-            char_map = metods.Char_map(map, otvet);
+            char_map = metods.Char_map(map);
+            for (int shsh = 0; shsh < char_map.GetLength(0); shsh++)
+            {
+                for (int shs = 0; shs < char_map.GetLength(1); shs++)
+                {
+                    if (shsh == 0 || shsh == char_map.GetLength(0) - 1 || shs == 0 || shs == char_map.GetLength(1) - 1)
+                    { 
+                        if (char_map[shsh, shs] == '▒')
+                        {
+                            char_map[shsh, shs] = '█';
+                        }
+                    }
+                }
+            }
+            for (int shsh = 0; shsh < char_map.GetLength(0); shsh++)
+            {
+                for (int shs = 0; shs < char_map.GetLength(1); shs++)
+                {
+                        if (char_map[shsh, shs] == 'P')
+                        {
+                            char_map[shsh-1, shs] = 'P';
+                            char_map[shsh, shs] = '█';
+                        }
+                }
+            }
             for (int shsh = 0; shsh < char_map.GetLength(0); shsh++)
             {
                 for (int shs = 0; shs < char_map.GetLength(1); shs++)
@@ -439,26 +439,28 @@ namespace F_WORK
                 }
                 Console.WriteLine();
             }
-            for (int shsh = 0; shsh < char_map.GetLength(0); shsh++)
+            Console.ReadKey();
+            for (int shsh = 0; shsh < char_map.GetLength(1); shsh++)
             {
-                for (int shs = 0; shs < char_map.GetLength(1); shs++)
+                for (int shs = 0; shs < char_map.GetLength(0); shs++)
                 {
-                    if (char_map[shsh, shs] == 'P')
+                    if (char_map[shs, shsh] == 'P')
                     {
-                        kx = shsh;
-                        ky = shs;
+                        kx = shs;
+                        ky = shsh;
                     }
                 }
             }
             while (game !=1)
             {
-                if (kx - 2<0||ky-1 <0)
+                Console.Clear();
+                if (kx - 1<0||ky-2 <0)
                 {
                     Console.Write('X');
                 }
                 else
                 {
-                    Console.Write(char_map[kx - 2, ky - 1]);
+                    Console.Write(char_map[kx - 1, ky - 2]);
                 }
                 if (kx - 1 < 0 || ky - 1 < 0)
                 {
@@ -468,90 +470,90 @@ namespace F_WORK
                 {
                     Console.Write(char_map[kx - 1, ky - 1]);
                 }
-                if (ky - 1 < 0)
+                if (kx - 1 < 0)
                 {
                     Console.Write('X');
                 }
                 else
                 {
-                    Console.Write(char_map[kx, ky - 1]);
+                    Console.Write(char_map[kx-1, ky]);
                 }
-                if (kx + 1 >= char_map.GetLength(1)|| ky - 1 < 0)
+                if (ky + 1 >= char_map.GetLength(1)|| kx - 1 < 0)
                 {
                     Console.Write('X');
                 }
                 else
                 {
-                    Console.Write(char_map[kx + 1 , ky - 1]);
+                    Console.Write(char_map[kx - 1 , ky + 1]);
                 }
-                if (kx + 2 >= char_map.GetLength(1) || ky - 1 < 0)
+                if (ky + 2 >= char_map.GetLength(1) || kx - 1 < 0)
                 {
                     Console.Write('X');
                 }
                 else
                 {
-                    Console.Write(char_map[kx + 2, ky - 1]);
+                    Console.Write(char_map[kx - 1, ky + 2]);
                 }
                 Console.WriteLine();
-                if (kx - 2 < 0)
+                if (ky - 2 < 0)
                 {
                     Console.Write('X');
                 }
                 else
                 {
-                    Console.Write(char_map[kx - 2, ky]);
+                    Console.Write(char_map[kx, ky-2]);
                 }
-                if (kx - 1 < 0 )
+                if (ky - 1 < 0 )
                 {
                     Console.Write('X');
                 }
                 else
                 {
-                    Console.Write(char_map[kx - 1, ky]);
+                    Console.Write(char_map[kx, ky-1]);
                 }            
                 Console.Write(char_map[kx, ky]);
-                if (kx + 1 >= char_map.GetLength(1))
+                if (ky+ 1 >= char_map.GetLength(1))
                 {
                     Console.Write('X');
                 }
                 else
                 {
-                    Console.Write(char_map[kx + 1, ky]);
+                    Console.Write(char_map[kx, ky+1]);
                 }
-                if (kx + 2 >= char_map.GetLength(1))
+                if (ky + 2 >= char_map.GetLength(1))
                 {
                     Console.Write('X');
                 }
                 else
                 {
-                    Console.Write(char_map[kx + 2, ky]);
+                    Console.Write(char_map[kx, ky+2]);
                 }
                 Console.WriteLine();
-                if (kx - 2 < 0 || ky + 1 >= char_map.GetLength(0))
+                if (ky - 2 < 0 || kx + 1 >= char_map.GetLength(0))
                 {
                     Console.Write('X');
                 }
                 else
                 {
-                    Console.Write(char_map[kx - 2, ky + 1]);
+                    Console.Write(char_map[kx +1, ky - 2]);
                 }
-                if (kx - 1 < 0 || ky + 1 >= char_map.GetLength(0))
+                if (ky - 1 < 0 || kx + 1 >= char_map.GetLength(0))
                 {
                     Console.Write('X');
                 }
                 else
                 {
-                    Console.Write(char_map[kx - 1, ky + 1]);
+                    Console.Write(char_map[kx +1, ky - 1]);
                 }
-                if (ky + 1 >= char_map.GetLength(0))
+                if (kx+ 1 >= char_map.GetLength(0))
                 {
                     Console.Write('X');
                 }
                 else
                 {
-                    Console.Write(char_map[kx, ky + 1]);
+                    Console.Write(char_map[kx+1, ky]);
                 }
-                if (kx + 1 >= char_map.GetLength(1) || ky + 1 >= char_map.GetLength(0))
+                if (ky+ 1 >= char_map.GetLength(1) || kx + 1 >= char_map.GetLength(0))
                 {
                     Console.Write('X');
                 }
@@ -559,27 +561,26 @@ namespace F_WORK
                 {
                     Console.Write(char_map[kx + 1, ky + 1]);
                 }
-                if (kx + 2 >= char_map.GetLength(1) || ky + 1 >= char_map.GetLength(0))
+                if (ky + 2 >= char_map.GetLength(1) || kx + 1 >= char_map.GetLength(0))
                 {
                     Console.Write('X');
                 }
                 else
                 {
-                    Console.Write(char_map[kx + 2, ky + 1]);
+                    Console.Write(char_map[kx + 1, ky + 2]);
                 }
                 Console.WriteLine();
                 game_peremen = 0;
                 while(game_peremen!=1)
                 {
-                   Console.WriteLine("GO!");
                    Button = Console.ReadKey();
                    if(Button.KeyChar == 'w')
                    {
-                        if(char_map[kx,ky-1]== '▒')
+                        if(char_map[kx-1,ky]== '▒')
                         {
                             game_peremen = 1;
                         }
-                        else if (char_map[kx, ky - 1] == 'U')
+                        else if (char_map[kx-1, ky] == 'U')
                         {
                             game_peremen = 1;
                             victory = 1;
@@ -587,21 +588,21 @@ namespace F_WORK
                    }
                     else if (Button.KeyChar == 'a')
                     {
-                        if (char_map[kx-1, ky] == '▒')
+                        if (char_map[kx, ky-1] == '▒')
                         {
                             game_peremen = 1;
                         }
                     }
                     else if (Button.KeyChar == 's')
                     {
-                        if (char_map[kx, ky+1] == '▒')
+                        if (char_map[kx+1, ky] == '▒')
                         {
                             game_peremen = 1;
                         }
                     }
                     else if (Button.KeyChar == 'd')
                     {
-                        if (char_map[kx + 1, ky] == '▒')
+                        if (char_map[kx, ky+1] == '▒')
                         {
                             game_peremen = 1;
                         }
@@ -615,34 +616,35 @@ namespace F_WORK
                 if (Button.KeyChar == 'w')
                 {
                     char_map[kx, ky] = '▒';
-                    char_map[kx, ky-1] = 'P';
-                    kx = kx;
-                    ky = ky - 1;
-                }
-                if (Button.KeyChar == 'a')
-                {
-                    char_map[kx, ky] = '▒';
                     char_map[kx-1, ky] = 'P';
                     kx = kx-1;
                     ky = ky;
                 }
+                if (Button.KeyChar == 'a')
+                {
+                    char_map[kx, ky] = '▒';
+                    char_map[kx, ky-1] = 'P';
+                    kx = kx;
+                    ky = ky-1;
+                }
                 if (Button.KeyChar == 's')
                 {
                     char_map[kx, ky] = '▒';
-                    char_map[kx, ky + 1] = 'P';
-                    kx = kx;
-                    ky = ky + 1;
+                    char_map[kx+1, ky ] = 'P';
+                    kx = kx+1;
+                    ky = ky;
                 }
                 if (Button.KeyChar == 'd')
                 {
                     char_map[kx, ky] = '▒';
-                    char_map[kx + 1, ky] = 'P';
-                    kx = kx + 1;
-                    ky = ky;
+                    char_map[kx, ky+1] = 'P';
+                    kx = kx;
+                    ky = ky+1;
                 }
                 speed++;
             }
             speedrun = char_map.GetLength(0) / speed;
+            Console.WriteLine();
             Console.WriteLine("ХАРОШ, ты спидраннер на все - " + speedrun);
             Console.ReadKey();
         }
@@ -665,7 +667,12 @@ namespace F_WORK
 
 internal class Metods
 {
-    public Char[,] Char_map(int[,] arr,int conec_generaciy)
+    /// <summary>
+    /// Возвращает ваш лаберинт в виде символов
+    /// </summary>
+    /// <param name="arr">двумерный массив типа int</param>
+    /// <returns>двумерный массив типа char</returns>
+    public Char[,] Char_map(int[,] arr)
     {
         char[,] char_map = new char[arr.GetLength(1) * 3, arr.GetLength(0) * 3];
         int sh_2;
@@ -875,12 +882,10 @@ internal class Metods
                 X = X + 3;
             }
             Y = Y + 3;
-        }
-        if (conec_generaciy == 1)
-        {
+        }  
             while (peremen != 1)
             {
-                ds = random.Next(0, char_map.GetLength(0));
+                ds = random.Next(0, char_map.GetLength(1));
                 if (char_map[0, ds] == '▒')
                 {
                     char_map[0, ds] = 'U';
@@ -890,16 +895,22 @@ internal class Metods
             peremen = 0;
             while (peremen != 1)
             {
-                ds = random.Next(0, char_map.GetLength(0));
-                if (char_map[char_map.GetLength(1) - 1, ds] == '▒')
+                ds = random.Next(0, char_map.GetLength(1));
+                if (char_map[char_map.GetLength(0) - 1, ds] == '▒')
                 {
-                    char_map[char_map.GetLength(1) - 1, ds] = 'P';
+                    char_map[char_map.GetLength(0) - 1, ds] = 'P';
                     peremen = 1;
                 }
-            }
-        }
+            }        
         return char_map;
     }
+    /// <summary>
+    /// Проверяет свободные места вокруг проверяемого шаблона в массиве
+    /// </summary>
+    /// <param name="kx">координата проверяемого шаблона X</param>
+    /// <param name="ky">координата проверяемого шаблона Y</param>
+    /// <param name="map">двумерный массив типа int, в которой будет будет проводится проверка</param>
+    /// <returns>одномерный массив типа int, который используется для обозначения свободных мест</returns>
     public int[] Check_mashine(int kx, int ky, int[,] map)
     {
         //получение информации окружения взависимости от положения проверяемой клетки
@@ -1093,15 +1104,6 @@ internal class Metods
             }
             else { prod_map[2] = 0; }
         }
-        //входы шаблонов
-
-        //условия которые проверяют шаблон клетки и взависимости от шаьлона ставит гарантированную "занятость" клетки окружения
-        //перекрёсток
-        if (map[kx, ky] == 11)
-        {
-
-        }
-        //вертикаль
         if (map[kx, ky] == 1)
         {
             prod_map[0] = 0;
@@ -1159,13 +1161,19 @@ internal class Metods
         }
         return prod_map;
     }
-    public int Generat_mashine_part_1(int[]prod_map, int kx, int ky, int[,] map)
+    /// <summary>
+    /// Решает куда ставить следующий шаблон
+    /// </summary>
+    /// <param name="prod_map">информация о окружающих клетках(prod_map)</param>
+    /// <param name="kx">координата проверяемого шаблона X</param>
+    /// <param name="ky">координата проверяемого шаблона Y</param>
+    /// <param name="map">двумерный массив типа int</param>
+    /// <returns>Значение определяющая куда поставится следующий шаблон</returns>
+    public int Metod_itog_location_shablon(int[]prod_map, int kx, int ky, int[,] map)
     {
        int peremen = 0;
        int itog_location_shablon=0;
        Random random = new Random();
-       int smena;
-       int smena_2;
         while (peremen != 1)
         {
             itog_location_shablon = random.Next(0, 4);
@@ -1212,6 +1220,15 @@ internal class Metods
         }
         return itog_location_shablon;
     }
+    /// <summary>
+    /// Решает какой шаблон ставить
+    /// </summary>
+    /// <param name="prod_map">информация о окружающих клетках(prod_map)</param>
+    /// <param name="itog_location_shablon">значение определяющая куда поставится следующий шаблон</param>
+    /// <param name="kx">координата проверяемого шаблона X</param>
+    /// <param name="ky">координата проверяемого шаблона Y</param>
+    /// <param name="map">двумерный массив типа int</param>
+    /// <returns>Значение определяющая какой шаблон ставить</returns>
     public int Generat_mashine_part_2(int[]prod_map,int itog_location_shablon, int kx, int ky, int[,] map)
     {
         int peremen_2 = 0;
