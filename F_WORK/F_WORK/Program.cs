@@ -51,7 +51,6 @@ namespace F_WORK
             int game_peremen;
             int victory = 0;
             double speed = 0;
-            double speedrun;
             ConsoleKeyInfo Button = Console.ReadKey();
             while (peremen_3 != 1)
             {
@@ -122,14 +121,15 @@ namespace F_WORK
                         peremen_3 = 1;
                     }
                 }
-                for (int t = 0; t < map.GetLength(1); t++)
+            }
+            char_map = metods.Char_map(map);
+            for (int shsh = 0; shsh < char_map.GetLength(0); shsh++)
+            {
+                for (int shs = 0; shs < char_map.GetLength(1); shs++)
                 {
-                    for (int f = 0; f < map.GetLength(0); f++)
-                    {
-                        Console.Write(map[f, t]);
-                    }
-                    Console.WriteLine();
-                }     
+                    Console.Write(char_map[shsh, shs]);
+                }
+                Console.WriteLine();
             }
             for (int t = 0; t < map.GetLength(1); t++)
             {
@@ -411,6 +411,14 @@ namespace F_WORK
             {
                 for (int shs = 0; shs < char_map.GetLength(1); shs++)
                 {
+                    Console.Write(char_map[shsh, shs]);
+                }
+                Console.WriteLine();
+            }
+            for (int shsh = 0; shsh < char_map.GetLength(0); shsh++)
+            {
+                for (int shs = 0; shs < char_map.GetLength(1); shs++)
+                {
                     if (shsh == 0 || shsh == char_map.GetLength(0) - 1 || shs == 0 || shs == char_map.GetLength(1) - 1)
                     { 
                         if (char_map[shsh, shs] == '▒')
@@ -643,9 +651,7 @@ namespace F_WORK
                 }
                 speed++;
             }
-            speedrun = char_map.GetLength(0) / speed;
-            Console.WriteLine();
-            Console.WriteLine("ХАРОШ, ты спидраннер на все - " + speedrun);
+            Console.WriteLine("ХАРОШ, ты сделал " +speed + " шагов." );
             Console.ReadKey();
         }
     }
@@ -883,25 +889,7 @@ internal class Metods
             }
             Y = Y + 3;
         }  
-            while (peremen != 1)
-            {
-                ds = random.Next(0, char_map.GetLength(1));
-                if (char_map[0, ds] == '▒')
-                {
-                    char_map[0, ds] = 'U';
-                    peremen = 1;
-                }
-            }
-            peremen = 0;
-            while (peremen != 1)
-            {
-                ds = random.Next(0, char_map.GetLength(1));
-                if (char_map[char_map.GetLength(0) - 1, ds] == '▒')
-                {
-                    char_map[char_map.GetLength(0) - 1, ds] = 'P';
-                    peremen = 1;
-                }
-            }        
+            
         return char_map;
     }
     /// <summary>
